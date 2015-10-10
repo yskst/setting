@@ -18,9 +18,10 @@ set expandtab
 set smartindent
 
 set number
-
+set list
 set fileencodings=utf-8,euc-jp,cp932,iso-2022-jp,default
-
+set showmatch
+set hidden
 
 "python's option
 filetype plugin on
