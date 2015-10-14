@@ -7,7 +7,7 @@ fi
 
 PS1='\[\e\\\][\u@\h \W]\$ '
 
-alias ls='ls -B --color=auto'
+alias ls='ls -B'
 alias ll='ls -l -h'
 alias la='ls -a'
 alias df='df -h'
@@ -18,13 +18,4 @@ if [ -f /usr/bin/gnome-terminal ]; then
     alias xterm='/usr/bin/gnome-terminal'
 fi
 
-
-case $TERM in
-    xterm*)
-        export PROMPT_COMMAND='echo -ne "\e]0;$USER@${HOSTNAME%%.*}\a"'
-        ;;
-    screen)
-        export PROMPT_COMMAND='echo -ne "\eP\e]0;$USER@${HOSTNAME%%.*}\a\e\\"; echo -ne "\ek$(pwd)\e\\"'
-        ;;
-esac
-
+export PROMPT_COMMAND='echo -ne "\033]0;$PWD\007"'
