@@ -10,7 +10,7 @@ altscreen on        # Support alternative screen (for vim, less, etc.).
 startup_message off # Suprress startup message.
 
 # Default shell
-shell /net/penguin/data/software/CentOS6/bin/zsh
+shell /bin/bash
 shelltitle "$ |bash"
 #setenv PS1 '[\u@\h \W]\$ '
 #setenv PS1 '$ '
@@ -29,11 +29,12 @@ shelltitle "$ |bash"
 #           M = magenta, C = cyan, W = white, D = default, . = keep
 #  %{-}   Pop color.
 #
-caption always "%{= wk}%-w%{gk}%n*%t%{-}%+w"
+caption always "%{= wk}%-w%{gk}%n*%H%{-}%+w"
 
+nethack on
 #
 # Status line at the screen's bottom.
 #
 backtick 0 1 0 pwd
-hardstatus alwayslastline "%{= kg}$USER@$HOSTNAME%{.w}:%{.Y}%`%{.w}%=[$LANG]"
+hardstatus alwayslastline "%{= kg}$USER@$HOSTNAME%{.w}:%{.Y}%t%{.w}%=${= .y}(%c)"
 
