@@ -7,7 +7,7 @@ fi
 
 PS1='\[\e\\\][\u@\h \W]\$ '
 
-alias ls='ls -B'
+alias ls='ls -B -G'
 alias ll='ls -l -h'
 alias la='ls -a'
 alias df='df -h'
