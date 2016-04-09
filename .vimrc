@@ -13,16 +13,17 @@ set nocompatible
 set backspace=indent,eol,start
 set ruler
 set showcmd
-set list " show invisibility character
+set list      " show invisibility character
 set listchars=tab:>^
 set laststatus=2
 
-set tabstop=2
+set tabstop=2 
 set shiftwidth=2
-set expandtab
-set smartindent
+set expandtab   " insert space when tab key pushed.
+set smartindent " insert indent when move to new line.
 set showmatch
-set number
+set number      " show line number.
+set title       " set terminal's title.
 
 set incsearch
 set hlsearch
