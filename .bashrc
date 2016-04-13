@@ -7,24 +7,24 @@ fi
 
 PS1='\[\e\\\][\u@\h \W]\$ '
 
-alias ls='ls -B --color=auto'
-alias ll='ls -l -h'
-alias la='ls -a'
+case "${OSTYPE}" in
+darwin*) # For BSD
+  alias ls='ls -BG'
+  alias ll='ls -hGl'
+  alias la='ls -aG'
+  ;;
+linux*) # For Gnu.
+  alias ls='ls -B  --color=auto'
+  alias ll='ls -lh --color=auto'
+  alias la='ls -a  --color=auto'
+esac
+
 alias df='df -h'
 alias du='du -h'
-alias diff='diff -s'
+alias diff='diff -u -s'
 
 if [ -f /usr/bin/gnome-terminal ]; then
     alias xterm='/usr/bin/gnome-terminal'
 fi
 
-
-case $TERM in
-    xterm*)
-        export PROMPT_COMMAND='echo -ne "\e]0;$USER@${HOSTNAME%%.*}\a"'
-        ;;
-    screen)
-        export PROMPT_COMMAND='echo -ne "\eP\e]0;$USER@${HOSTNAME%%.*}\a\e\\"; echo -ne "\ek$(pwd)\e\\"'
-        ;;
-esac
 
