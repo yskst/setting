@@ -8,6 +8,8 @@ noremap  
 noremap!  
 noremap <BS> 
 noremap! <BS> 
+noremap <C-j> <esc>
+noremap! <C-j> <esc>
 
 set backspace=indent,eol,start
 set ruler
